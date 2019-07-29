@@ -41,7 +41,7 @@ public class DataSources {
             @Override
             public void onResponse(Call<mealResponse> call, Response<mealResponse> response) {
                 if(response.isSuccessful())
-                    callback.onDataFetched(Collections.emptyList());
+                    callback.onDataFetched(response.body().getMeals());
                 else
                     callback.onDataFetched(Collections.emptyList());
             }
